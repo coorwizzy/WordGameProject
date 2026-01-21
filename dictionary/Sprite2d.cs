@@ -12,6 +12,7 @@ public partial class Sprite2d : Sprite2D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+		Godot.Sprite2D Sword = this.GetNode<Godot.Sprite2D>("Sword");
 		float Amount = 5;
 		if (Input.IsKeyPressed(Key.W)){
 			this.Position += new Vector2(0,-Amount);
@@ -24,6 +25,12 @@ public partial class Sprite2d : Sprite2D
 		}
 		if (Input.IsKeyPressed(Key.D)){
 			this.Position += new Vector2(Amount,0);
+		}
+		if (Input.IsKeyPressed(Key.E)){
+			Sword.Position += new Vector2(0,-116);
+		}
+		if (Input.IsKeyPressed(Key.Q)){
+			Sword.Position += new Vector2(0,116);
 		}
 	}
 }

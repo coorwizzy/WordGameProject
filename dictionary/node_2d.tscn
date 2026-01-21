@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dh73qgluku2om"]
+[gd_scene load_steps=5 format=3 uid="uid://dh73qgluku2om"]
 
 [ext_resource type="Texture2D" uid="uid://b1wcoa6v5uv6u" path="res://icon.svg" id="1_wtcfe"]
-[ext_resource type="Script" uid="uid://d0vieuma3lmxq" path="res://Sprite2d.cs" id="2_0e48y"]
+[ext_resource type="Script" uid="uid://bkcny7f5dxart" path="res://Player_Character.cs" id="2_epypp"]
+[ext_resource type="Script" uid="uid://bah7bv5i5kxme" path="res://Enemy.cs" id="3_epypp"]
 
 [sub_resource type="CSharpScript" id="CSharpScript_wtcfe"]
 script/source = "using Godot;
@@ -24,7 +25,20 @@ public partial class Sprite2d : Sprite2D
 [node name="Node2D" type="Node2D"]
 script = SubResource("CSharpScript_wtcfe")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(551, 290)
+[node name="Player_Character" type="Sprite2D" parent="."]
+position = Vector2(34, 92.5)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_wtcfe")
-script = ExtResource("2_0e48y")
+script = ExtResource("2_epypp")
+
+[node name="Sword" type="Sprite2D" parent="Player_Character"]
+position = Vector2(84, -2.000001)
+rotation = 1.029613
+scale = Vector2(0.19140619, 0.9491118)
+texture = ExtResource("1_wtcfe")
+
+[node name="Enemy" type="Sprite2D" parent="."]
+position = Vector2(618.5, 304.5)
+scale = Vector2(1.1953125, 0.4296875)
+texture = ExtResource("1_wtcfe")
+script = ExtResource("3_epypp")
