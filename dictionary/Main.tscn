@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://c156rlbf8elg1"]
+
+[ext_resource type="Texture2D" uid="uid://b1wcoa6v5uv6u" path="res://icon.svg" id="1_cm0pq"]
+[ext_resource type="Script" uid="uid://cncygandpg041" path="res://Main.cs" id="1_fos0i"]
+[ext_resource type="Script" uid="uid://bkcny7f5dxart" path="res://Player_Character.cs" id="2_fos0i"]
+[ext_resource type="Script" uid="uid://cb01xtfsrvhlo" path="res://Sword.cs" id="3_3dxm6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cm0pq"]
+size = Vector2(118.41922, 126.25325)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kdubu"]
+size = Vector2(117.73428, 117.26535)
+
+[node name="Node2D" type="Node2D" unique_id=2068831703]
+script = ExtResource("1_fos0i")
+
+[node name="Player_Character" type="Sprite2D" parent="." unique_id=24217131]
+position = Vector2(41.300003, 85.950005)
+scale = Vector2(0.7140626, 0.70234376)
+texture = ExtResource("1_cm0pq")
+script = ExtResource("2_fos0i")
+
+[node name="Sword" type="Sprite2D" parent="Player_Character" unique_id=2044060408]
+position = Vector2(84, -2.000001)
+rotation = 1.029613
+scale = Vector2(0.19140619, 0.9491118)
+texture = ExtResource("1_cm0pq")
+script = ExtResource("3_3dxm6")
+
+[node name="Area2D" type="Area2D" parent="Player_Character/Sword" unique_id=1650117576]
+
+[node name="SwordHit" type="CollisionShape2D" parent="Player_Character/Sword/Area2D" unique_id=513905685]
+position = Vector2(0.53564453, -0.31167603)
+shape = SubResource("RectangleShape2D_cm0pq")
+
+[node name="Area2D" type="Area2D" parent="Player_Character" unique_id=1510810532]
+
+[node name="HurtBox" type="CollisionShape2D" parent="Player_Character/Area2D" unique_id=1859953653]
+position = Vector2(-0.3713684, 0.07118225)
+shape = SubResource("RectangleShape2D_kdubu")

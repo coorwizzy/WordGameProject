@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cx8btyxsey3mc"]
+
+[ext_resource type="Texture2D" uid="uid://b1wcoa6v5uv6u" path="res://icon.svg" id="1_s7bn3"]
+[ext_resource type="Script" uid="uid://bah7bv5i5kxme" path="res://Enemy.cs" id="2_2hac7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s7bn3"]
+size = Vector2(129.67322, 132.65454)
+
+[node name="Enemy" type="Sprite2D" unique_id=123950691]
+scale = Vector2(1.1953125, 0.4296875)
+texture = ExtResource("1_s7bn3")
+script = ExtResource("2_2hac7")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=300907921]
+
+[node name="HurtBox" type="CollisionShape2D" parent="Area2D" unique_id=236521358]
+scale = Vector2(1, 0.9999999)
+shape = SubResource("RectangleShape2D_s7bn3")
+
+[node name="MoveTimer" type="Timer" parent="." unique_id=204042004]
+wait_time = 0.33

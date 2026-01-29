@@ -12,7 +12,7 @@ public partial class Player_Character : Sprite2D
 	public override void _Process(double delta)
 	{
 		// (placeholder script) Godot.Sprite2D Sword = this.GetNode<Godot.Sprite2D>("Sword");
-		float Amount = 5;
+		int Amount = 5;
 		if (Input.IsKeyPressed(Key.W)){
 			this.Position += new Vector2(0,-Amount);
 		}
